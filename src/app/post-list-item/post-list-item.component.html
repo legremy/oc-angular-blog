@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-8">
+    <h2>{{ post.title }}</h2>
+  </div>
+
+  <div class="col-4">
+    {{ post.createdAt | date: "short" }}
+  </div>
+</div>
+
+<p>{{ post.content }}</p>
+<p>
+  <button (click)="addOneLoveIts()" class="btn btn-success btn-sm mr-1">
+    Love It <span *ngIf="post.loveIts > 0">({{ post.loveIts }})</span>
+  </button>
+  <button (click)="substractOneLoveIts()" class="btn btn-sm btn-danger">
+    Hate It <span *ngIf="post.loveIts < 0">({{ -post.loveIts }})</span>
+  </button>
+</p>
